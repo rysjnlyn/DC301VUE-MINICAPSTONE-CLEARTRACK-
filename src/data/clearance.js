@@ -1,0 +1,82 @@
+export const departments = [
+  {
+    id: 1,
+    name: 'Library',
+    short: 'LIB',
+    icon: '▤',
+    description: 'Return borrowed books and settle library obligations.',
+    office: 'Library Services',
+    requirements: ['Return all borrowed books', 'Settle outstanding library fines'],
+  },
+  {
+    id: 2,
+    name: 'Finance Office',
+    short: 'FIN',
+    icon: '₱',
+    description: 'Confirm tuition, fees, and account balances.',
+    office: 'Finance and Accounting',
+    requirements: ['Settle outstanding balances', 'Verify payment records'],
+  },
+  {
+    id: 3,
+    name: 'Registrar',
+    short: 'REG',
+    icon: '▣',
+    description: 'Verify enrollment records and academic documents.',
+    office: 'Office of the Registrar',
+    requirements: ['Confirm enrollment information', 'Return borrowed school documents'],
+  },
+  {
+    id: 4,
+    name: 'Laboratory',
+    short: 'LAB',
+    icon: '⌘',
+    description: 'Return equipment and clear laboratory accounts.',
+    office: 'Laboratory Services',
+    requirements: ['Return borrowed equipment', 'Settle laboratory charges'],
+  },
+  {
+    id: 5,
+    name: 'Guidance Office',
+    short: 'GUD',
+    icon: '♡',
+    description: 'Complete required guidance consultations.',
+    office: 'Student Guidance Services',
+    requirements: ['Complete required consultation'],
+  },
+  {
+    id: 6,
+    name: 'Student Affairs',
+    short: 'SAO',
+    icon: '☆',
+    description: 'Confirm student organization and activity obligations.',
+    office: 'Student Affairs Office',
+    requirements: ['Return organization property', 'Complete activity obligations'],
+  },
+  {
+    id: 7,
+    name: 'Department Office',
+    short: 'DEP',
+    icon: '⌂',
+    description: 'Obtain academic department approval.',
+    office: 'Academic Department',
+    requirements: ['Complete department checklist', 'Secure adviser approval'],
+  },
+]
+
+const initialStatuses = [
+  'approved',
+  'pending',
+  'pending',
+  'needs-action',
+  'approved',
+  'pending',
+  'pending',
+]
+
+export const initialRecords = departments.map((department, index) => ({
+  departmentId: department.id,
+  status: initialStatuses[index],
+  note: index === 3 ? 'Please return the borrowed laboratory kit.' : '',
+  updatedAt: 'Oct 13, 2026',
+}))
